@@ -125,3 +125,13 @@ end)
 button("Fechar", 320, Color3.fromRGB(170,0,0), function()
     gui:Destroy()
 end)
+
+local UserInputService = game:GetService("UserInputService")
+
+UserInputService.InputBegan:Connect(function(input, gpe)
+    if gpe then return end
+    if input.KeyCode == Enum.KeyCode.RightShift then
+        gui.Enabled = not gui.Enabled
+    end
+end)
+
